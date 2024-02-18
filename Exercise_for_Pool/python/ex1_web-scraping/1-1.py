@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import requests
 from bs4 import BeautifulSoup
 from requests.compat import urljoin
@@ -64,9 +58,16 @@ while count<=49:
         list.append(matches[1])
         list.append(matches[2])
         list.append(matches[3])
+    
+    buffai=''
     buildings=bs.find_all("span", class_="locality")
     for building in buildings:
-        list.append(building.text)
+        if building.text is None:
+            buffai=buffai+''
+        else:
+            buffai=buffai+building.text
+    list.append(buffai)
+   
     URL=''
     list.append(URL)
     SSH=''
@@ -80,5 +81,4 @@ while count<=49:
     time.sleep(3)
 
 df = pd.DataFrame(table)
-df.to_csv("sample2.csv",sep=',',encoding='cp932',index=False,header=False)
-
+df.to_csv("1-1.csv",sep=',',encoding='cp932',index=False,header=False)
