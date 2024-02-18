@@ -148,5 +148,5 @@ for urlsub in urlpool:
     time.sleep(3)
 
 df = pd.DataFrame(alllist)
-df.to_csv("sample3.csv",sep=',',encoding='cp932',index=False,header=False)
+df.to_csv("1-2.csv",sep=',',encoding='cp932',index=False,header=False)
 #end
