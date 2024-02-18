@@ -57,7 +57,6 @@ while count<=49:
             r = m[idx+1:]
             buffa=buffa+r
     buffa = buffa + ''
-    print("buffa:"+buffa+":")
     list.append(buffa)
     addresses=bs.find_all("span", class_="region")
     for address in addresses:
